@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<title>Learning JavaScripts</title>
+<head>
+<style type="text/css">
+.modifyDiv{ padding:5px; border:1px dotted green;  }
+.hide{ display:none}
+.red{ background-color: red}
+.show{ display:inline; background-color: green}
+
+</style>
+</head>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo" color="red">JavaScript can change HTML content.</p>
+<p id="time" class=" ">Time Show</p>
+
+<h1 id="header" class="red ">This div will hide after Click to Click me</h1>
+<h2 id="header2" class="hide red">Hide Div was replaced by this New Div</h2>
+
+<button type="button" onclick='clickMe()'>Click Me!</button>
+
+<script>
+	function clickMe(){
+    	document.getElementById("demo").innerHTML = "Hello JavaScript!";
+		
+        var timeDiv = document.getElementById("time");
+		timeDiv.classList.add("modifyDiv");
+		timeDiv.innerHTML = Date();
+
+      	var head = document.getElementById("header");
+		head.classList.add("hide");
+        
+        var head2 = document.getElementById("header2");
+        head2.classList.replace("hide", "show")
+		
+         
+    }
+</script>
+</body>
+
+</html>
